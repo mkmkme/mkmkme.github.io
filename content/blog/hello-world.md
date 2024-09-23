@@ -11,3 +11,5 @@ I also used a [neat trick by Frederick Banning](https://fbanning.de/thoughts/mas
 to be able to comment and see comments under the blog posts.
 
 Hello, world!
+
+{{ comments(id="113187100718743693") }}
