@@ -1,0 +1,92 @@
+@import "../themes/hook/sass/style.scss";
+
+section#comments {
+    #comments-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article.comment {
+        padding: 0;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .header {
+            // all meta information of the comment
+            border-radius: 10px 10px 0 0;
+            border-width: 1px;
+            border-style: solid;
+            // border-color: $c-fg;
+            border-color: black;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            gap: 0.75rem;
+
+            .avatar-link {
+                // the link to the author's profile
+                display: flex;
+                align-items: center;
+
+                picture {
+                    // author's avatar
+                    display: flex;
+
+                    img.avatar {
+                        // actual author's avatar picture
+                        width: 5rem;
+                        min-width: 5rem;
+                        max-width: 5rem;
+                        // border: 1px solid $c-fg;
+                        border: 1px solid black;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .header-info {
+                // displayInstance, timestamp, and faves
+                display: flex;
+                flex-direction: column;
+
+                .display {
+                    // author's displayed name, not username
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                }
+
+                .instance {
+                    // author's instance
+                }
+
+                time {
+                    // timestamp
+                }
+
+                .faves {
+                    // fav counter
+                }
+            }
+        }
+
+        main {
+            // actual comment content
+            border-radius: 0 0 10px 10px;
+            border-width: 1px;
+            border-style: solid;
+            // border-color: $c-fg;
+            border-color: black;
+            padding: 0.5rem;
+        }
+    }
+}
