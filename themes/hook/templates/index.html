@@ -44,7 +44,7 @@
         <h2>Recent posts</h2>
         <ul>
             {% for post in blog.pages | slice(end=20) %}
-            <li><a href="{{ post.permalink }}">{{ post.title }}</a></li>
+            <li>{{ post.date }}: <a href="{{ post.permalink }}">{{ post.title }}</a></li>
             {% endfor %}
         </ul>
         <p><a href="{{ blog.permalink }}">Archive</a></p>
