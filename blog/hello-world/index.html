@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="mkmkme&amp;#x27;s personal blog">
+    <title>@mkmkme | Hello, world!</title>
+    
+    <link rel="stylesheet" href="https://mkmk.me/style.css?h=a0ef9c186ae360415b5f">
+    
+    
+    
+    
+</head>
+<body>
+    
+<header class="space">
+    <a href="https:&#x2F;&#x2F;mkmk.me">&LeftArrow; Home</a>
+</header>
+
+    
+<main>
+    <h1>Hello, world!</h1>
+    
+    <p class="secondary small">
+        23 September, 2024
+
+        
+        
+        
+
+        
+    </p>
+    
+    <div class="space"></div>
+    <p>This is the testing blog post which I’ll be using to test the comments as well
+as deployment of zola on Github pages.</p>
+<p>This blog is built using <a href="https://www.getzola.org/">zola</a> and <a href="https://www.getzola.org/themes/hook/">Hook theme</a>.
+I also used a <a href="https://fbanning.de/thoughts/mastodon-comments-on-zola-blog/">neat trick by Frederick Banning</a>
+to be able to comment and see comments under the blog posts.</p>
+<p>Hello, world!</p>
+<section id="comments">
+    <h2>Comments</h2>
+    <p><a href="https://mastodon.social/@mkmkme/113187100718743693">Respond to this
+            post</a> with an account on the Fediverse (like Mastodon).</p>
+
+    <p id="mastodon-comments-list"><button id="load-comment">Load comments</button></p>
+    <div id="comments-wrapper">
+        <noscript>
+            <p>Loading comments relies on JavaScript. Try enabling JavaScript and reloading, or visit <a
+                    href="https://mastodon.social/@mkmkme/113187100718743693">the
+                    original post</a> on Mastodon.</p>
+        </noscript>
+    </div>
+    <noscript>You need JavaScript to view the comments.</noscript>
+    <script src="/comments/purify.min.js"></script>
+    <script type="text/javascript">
+        let host = "mastodon.social";
+        let username = "mkmkme";
+        let id = "113187100718743693";
+    </script>
+    <script src="/comments/comments.js"></script>
+</section>
+
+</main>
+
+    <div class="dark-mode-buttons">
+        <button class="dark-mode-button" id="dark-mode-on"><img src="https://mkmk.me/dark_mode.svg" width="24" height="24" alt="Dark mode" aria-label="dark mode toggle" title="Dark mode"></button>
+        <button class="dark-mode-button" id="dark-mode-off"><img src="https://mkmk.me/light_mode.svg" width="24" height="24" alt="Light mode" aria-label="light mode toggle" title="Light mode"></button>
+    </div>
+    <script>
+        const cls = document.querySelector("html").classList;
+        const sessionTheme = sessionStorage.getItem("theme");
+
+        function setDark() {
+            cls.add("dark-mode");
+            cls.remove("light-mode");
+            sessionStorage.setItem("theme", "dark");
+        }
+        function setLight() {
+            cls.add("light-mode");
+            cls.remove("dark-mode");
+            sessionStorage.setItem("theme", "light");
+        }
+
+        if (sessionTheme === "dark") {
+            setDark();
+        } else if (sessionTheme === "light") {
+            setLight();
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setDark();
+        }
+
+        document.getElementById("dark-mode-on").addEventListener("click", function(e) {
+            setDark();
+        });
+        document.getElementById("dark-mode-off").addEventListener("click", function(e) {
+            setLight();
+        });
+    </script>
+    <noscript>
+        <style>
+            .dark-mode-buttons {
+                display: none;
+            }
+        </style>
+    </noscript>
+</body>
+</html>
