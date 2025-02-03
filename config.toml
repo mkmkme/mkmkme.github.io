@@ -38,6 +38,7 @@ links = [
     { title = "Mastodon", href = "https://mastodon.social/@mkmkme" },
     { title = "GitHub", href = "https://github.com/mkmkme" },
     { title = "LinkedIn", href = "https://linkedin.com/in/mkmkme" },
+    { title = "CV", href = "files/cv.pdf" },
 ]
 
 [extra.mastodon]
