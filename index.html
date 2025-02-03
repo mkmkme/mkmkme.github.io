@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="mkmkme&amp;#x27;s personal blog">
+    <title>@mkmkme</title>
+    
+    <link rel="stylesheet" href="https://mkmk.me/style.css?h=a0ef9c186ae360415b5f">
+    
+    
+    
+    
+</head>
+<body>
+    
+    <header class="space">
+        <h1>@mkmkme</h1>
+        
+        
+        <nav class="header-links">
+            
+            <a href="https:&#x2F;&#x2F;mastodon.social&#x2F;@mkmkme">Mastodon</a>
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;mkmkme">GitHub</a>
+            
+            <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;mkmkme">LinkedIn</a>
+            
+            <a href="files&#x2F;cv.pdf">CV</a>
+            
+            
+        </nav>
+        
+    </header>
+    
+    
+    
+    
+    <main>
+        
+        <div class="space">
+            <p>Hello! I’m Mikhail.</p>
+<p>I’m a software engineer at <a href="https://aiven.io/">Aiven</a>. I love Linux, C++, Rust
+and poking into all kinds of hardware.</p>
+<p>Here you will see some random thoughts that I had during my journey.</p>
+
+        </div>
+        
+        
+        <h2>Recent posts</h2>
+        <ul>
+            
+            <li>2024-09-23: <a href="https:&#x2F;&#x2F;mkmk.me&#x2F;blog&#x2F;hello-world&#x2F;">Hello, world!</a></li>
+            
+        </ul>
+        <p><a href="https:&#x2F;&#x2F;mkmk.me&#x2F;blog&#x2F;">Archive</a></p>
+        
+    </main>
+    
+    
+    <div class="dark-mode-buttons">
+        <button class="dark-mode-button" id="dark-mode-on"><img src="https://mkmk.me/dark_mode.svg" width="24" height="24" alt="Dark mode" aria-label="dark mode toggle" title="Dark mode"></button>
+        <button class="dark-mode-button" id="dark-mode-off"><img src="https://mkmk.me/light_mode.svg" width="24" height="24" alt="Light mode" aria-label="light mode toggle" title="Light mode"></button>
+    </div>
+    <script>
+        const cls = document.querySelector("html").classList;
+        const sessionTheme = sessionStorage.getItem("theme");
+
+        function setDark() {
+            cls.add("dark-mode");
+            cls.remove("light-mode");
+            sessionStorage.setItem("theme", "dark");
+        }
+        function setLight() {
+            cls.add("light-mode");
+            cls.remove("dark-mode");
+            sessionStorage.setItem("theme", "light");
+        }
+
+        if (sessionTheme === "dark") {
+            setDark();
+        } else if (sessionTheme === "light") {
+            setLight();
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setDark();
+        }
+
+        document.getElementById("dark-mode-on").addEventListener("click", function(e) {
+            setDark();
+        });
+        document.getElementById("dark-mode-off").addEventListener("click", function(e) {
+            setLight();
+        });
+    </script>
+    <noscript>
+        <style>
+            .dark-mode-buttons {
+                display: none;
+            }
+        </style>
+    </noscript>
+</body>
+</html>
