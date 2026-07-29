@@ -1,17 +1,20 @@
 @import "../themes/hook/sass/style.scss";
 
-section#comments {
-    #comments-wrapper {
+.comments {
+    .comments-status:empty {
+        display: none;
+    }
+
+    .comments-wrapper {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
     }
 
     article.comment {
         padding: 0;
-        margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
-        flex-grow: 2;
 
         p:first-child {
             margin-top: 0;
@@ -21,13 +24,11 @@ section#comments {
             margin-bottom: 0;
         }
 
-        .header {
-            // all meta information of the comment
+        .comment-header {
             border-radius: 10px 10px 0 0;
             border-width: 1px;
             border-style: solid;
-            // border-color: $c-fg;
-            border-color: black;
+            border-color: var(--table-border);
             padding: 0.5rem;
             display: flex;
             flex-direction: row;
@@ -38,55 +39,47 @@ section#comments {
                 display: flex;
                 align-items: center;
 
-                picture {
-                    // author's avatar
-                    display: flex;
-
-                    img.avatar {
-                        // actual author's avatar picture
-                        width: 5rem;
-                        min-width: 5rem;
-                        max-width: 5rem;
-                        // border: 1px solid $c-fg;
-                        border: 1px solid black;
-                        border-radius: 50%;
-                    }
+                img.avatar {
+                    display: block;
+                    width: 4rem;
+                    height: 4rem;
+                    border: 1px solid var(--table-border);
+                    border-radius: 50%;
                 }
             }
 
-            .header-info {
-                // displayInstance, timestamp, and faves
+            .comment-header-info {
                 display: flex;
                 flex-direction: column;
 
-                .display {
-                    // author's displayed name, not username
-                    font-weight: bold;
+                .comment-display-name {
                     font-size: 1.4rem;
-                }
-
-                .instance {
-                    // author's instance
-                }
-
-                time {
-                    // timestamp
-                }
-
-                .faves {
-                    // fav counter
                 }
             }
         }
 
-        main {
-            // actual comment content
+        .comment-content {
             border-radius: 0 0 10px 10px;
             border-width: 1px;
             border-style: solid;
-            // border-color: $c-fg;
-            border-color: black;
+            border-color: var(--table-border);
             padding: 0.5rem;
         }
+
+        details > .comment-content {
+            margin-top: 0.5rem;
+        }
+
     }
+
+    article.comment-reply {
+        margin-left: 1rem;
+    }
+
+    article.comment-author {
+        .comment-header {
+            border-left: 4px solid var(--accent);
+        }
+    }
+
 }

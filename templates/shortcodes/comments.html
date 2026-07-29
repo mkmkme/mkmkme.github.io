@@ -1,22 +1,20 @@
-<section id="comments">
+<section class="comments"
+    data-mastodon-comments
+    data-host="{{ config.extra.mastodon.host }}"
+    data-username="{{ config.extra.mastodon.username }}"
+    data-status-id="{{ id }}">
     <h2>Comments</h2>
     <p><a href="https://{{ config.extra.mastodon.host }}/@{{ config.extra.mastodon.username }}/{{ id }}">Respond to this
             post</a> with an account on the Fediverse (like Mastodon).</p>
-
-    <p id="mastodon-comments-list"><button id="load-comment">Load comments</button></p>
-    <div id="comments-wrapper">
-        <noscript>
-            <p>Loading comments relies on JavaScript. Try enabling JavaScript and reloading, or visit <a
-                    href="https://{{ config.extra.mastodon.host }}/@{{ config.extra.mastodon.username }}/{{ id }}">the
-                    original post</a> on Mastodon.</p>
+    <p>
+        <button class="comments-load" type="button">Load comments from Mastodon</button>
+    </p>
+    <p class="comments-status" role="status" aria-live="polite"></p>
+    <div class="comments-wrapper">
+        <noscript>JavaScript is required to load comments here. You can still read them in the
+            <a href="https://{{ config.extra.mastodon.host }}/@{{ config.extra.mastodon.username }}/{{ id }}">original Mastodon thread</a>.
         </noscript>
     </div>
-    <noscript>You need JavaScript to view the comments.</noscript>
-    <script src="/comments/purify.min.js"></script>
-    <script type="text/javascript">
-        let host = "{{ config.extra.mastodon.host }}";
-        let username = "{{ config.extra.mastodon.username }}";
-        let id = "{{ id }}";
-    </script>
-    <script src="/comments/comments.js"></script>
+    <script src="/comments/purify.min.js" defer></script>
+    <script src="/comments/comments.js" defer></script>
 </section>
