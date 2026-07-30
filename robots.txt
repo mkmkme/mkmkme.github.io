@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /files/
+Allow: /
+Sitemap: https://mkmk.me/sitemap.xml
