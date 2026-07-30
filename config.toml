@@ -30,10 +30,10 @@ theme = "github-dark"
 # Put all your custom variables here
 
 links = [
-    { title = "Mastodon", href = "https://mastodon.social/@mkmkme" },
-    { title = "GitHub", href = "https://github.com/mkmkme" },
-    { title = "LinkedIn", href = "https://linkedin.com/in/mkmkme" },
-    { title = "CV", href = "files/cv.pdf" },
+    { title = "Mastodon", href = "https://mastodon.social/@mkmkme", icon = "mastodon" },
+    { title = "GitHub", href = "https://github.com/mkmkme", icon = "github" },
+    { title = "LinkedIn", href = "https://linkedin.com/in/mkmkme", icon = "linkedin" },
+    { title = "CV", href = "files/cv.pdf", icon = "pdf" },
 ]
 
 [extra.mastodon]

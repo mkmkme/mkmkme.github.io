@@ -22,7 +22,12 @@
         {% if config.extra.links or linked_pages %}
         <nav class="header-links">
             {% for link in config.extra.links %}
-            <a href="{{ link.href }}">{{ link.title }}</a>
+            <a href="{{ link.href }}"{% if link.icon is defined %} class="social-card"{% endif %}>
+                {% if link.icon is defined %}
+                <span class="social-card__icon social-card__icon--{{ link.icon }}" aria-hidden="true"></span>
+                {% endif %}
+                <span>{{ link.title }}</span>
+            </a>
             {% endfor %}
             {% for page in linked_pages %}
             <a href="{{ page.permalink }}">{{ page.title }}</a>

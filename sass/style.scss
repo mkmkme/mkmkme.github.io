@@ -1,5 +1,84 @@
 @import "../themes/hook/sass/style.scss";
 
+.header-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+
+    a {
+        margin-right: 0;
+    }
+
+    .social-card {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.55rem 0.75rem;
+        border: 1px solid var(--table-border);
+        border-radius: 0.55rem;
+        color: var(--foreground);
+        background: var(--table-row);
+        line-height: 1;
+        text-decoration: none;
+        transition:
+            color 150ms ease,
+            border-color 150ms ease,
+            background-color 150ms ease,
+            transform 150ms ease;
+
+        &:hover {
+            color: var(--accent-highlight);
+            border-color: var(--accent);
+            background: var(--tertiary);
+            transform: translateY(-1px);
+        }
+
+        &:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+    }
+
+    .social-card__icon {
+        display: inline-block;
+        width: 1.15rem;
+        height: 1.15rem;
+        flex: 0 0 auto;
+        fill: currentColor;
+    }
+
+    .social-card__icon {
+        background-color: currentColor;
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+    }
+
+    .social-card__icon--mastodon {
+        -webkit-mask-image: url("/icons/mastodon.svg");
+        mask-image: url("/icons/mastodon.svg");
+    }
+
+    .social-card__icon--github {
+        -webkit-mask-image: url("/icons/github.svg");
+        mask-image: url("/icons/github.svg");
+    }
+
+    .social-card__icon--linkedin {
+        -webkit-mask-image: url("/icons/linkedin.svg");
+        mask-image: url("/icons/linkedin.svg");
+    }
+
+    .social-card__icon--pdf {
+        -webkit-mask-image: url("/icons/pdf.svg");
+        mask-image: url("/icons/pdf.svg");
+    }
+}
+
 .comments {
     .comments-status:empty {
         display: none;
